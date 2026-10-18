@@ -9,3 +9,6 @@ class Controller:
          u = self.gain_p*e + self.gain_d*(e - self.e_0)
          self.e_0 = e
          return u
+
+    def reset(self):
+        self.e_0 = 0
