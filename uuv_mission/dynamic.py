@@ -77,11 +77,11 @@ class Mission:
     @classmethod
     def from_csv(cls, file_name: str):
         df = pd.read_csv(file_name)
-        cls.reference = df["reference"].to_numpy()
-        cls.cave_height = df["cave_height"].to_numpy()
-        cls.cave_depth = df["cave_depth"].to_numpy()
-
-        return cls
+        return cls(
+                df["reference"].to_numpy(),
+                df["cave_height"].to_numpy(),
+                df["cave_depth"].to_numpy(),
+        )
 
 
 class ClosedLoop:
